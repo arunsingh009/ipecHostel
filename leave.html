@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="leave.css">
+    <title>Leave form</title>
+    <style>
+        #contact-box #Room{
+            width: 100px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="contact">
+        <h1 class=" h-primary center"> Leave Form</h1>
+        <div id="contact-box">
+            <form onsubmit="return validate()" action="submitted.html">
+                <div class="form-group">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" placeholder="Enter Your Name">
+                </div>
+                <div class="form-group">
+                    <label for="roll">Roll No.: </label>
+                    <input type="number" name="name" id="roll" placeholder="Enter Your Roll No.">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input type="text" name="name" id="email" placeholder="Enter Your Email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone.no: </label>
+                    <input type="number" name="name" id="phone" placeholder="Enter Your Mobile.no">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="year">Year: </label>
+                    <select name="My Year" id="Year" required>
+                        <option value="Ist year">Ist year</option>
+                        <option value="IInd year">IInd year</option>
+                        <option value="IIIrd year">IIIrd year</option>
+                        <option value="IVth year">IVth year</option>
+                    </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label for="Room">Room Number:</label>&nbsp;
+                    <input type="text" id="Room" placeholder="Room no">
+                </div>
+                <div class="form-group">
+                    <label for="messages">Reason: </label>
+                    <textarea name="Message" id="messages" cols="30" rows="10" style="margin: 0px; height: 54px; width: 537px;"></textarea>
+                </div>
+                <div>
+                    <input id="submit" type="submit" value="Submit Now">
+                    <input type="reset" value="Reset Now">
+                </div>
+            </form>
+        </div>
+
+    </section>
+    <script>
+        function validate() {
+            var Name = document.getElementById("name");
+            var Roll = document.getElementById("roll");
+            var Email = document.getElementById("email");
+            var Phone = document.getElementById("phone");
+            var text = document.getElementById("messages")
+            var room = document.getElementById("Room")
+
+            if (Name.value.trim() == "" || Roll.value.trim() == "" || Email.value.trim() == "" || phone.value == "" || text.value.trim() == "" || room.value.trim()=="") {
+                alert("No blank values allowed");
+                return false;
+
+            } else if(Roll.value.trim().length > 10) {
+                alert("Roll No must be of 10 digits.");
+                return false;
+            } else if(Roll.value.trim().length < 10) {
+                alert("Roll No must be of 10 digits.");
+                return false;
+            } else if(Phone.value.trim().length < 10) {
+                alert("Phone No must be of 10 digits.");
+                return false;
+            } else if(Phone.value.trim().length < 10) {
+                alert("Phone No must be of 10 digits.");
+                return false;
+            }else{
+                return true;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

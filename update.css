@@ -1,0 +1,99 @@
+body{
+    background: url(pic2.jpg);
+    position: absolute;
+    background-size: cover;
+}
+.box{
+    width: 700px;
+    height: 400px;
+    top: 50%;
+    left: -50%;
+    position: absolute;
+    transform: translate(50%,50%);
+    background-color: white;
+    opacity: .8;
+    border-radius: 8px;
+    border:2px solid black;
+}
+.head p{
+    text-transform: uppercase;
+    font-weight: 800;
+    text-align: center;
+    font-size: 30px;
+    background-color: black;
+    color: white;
+    opacity:.6;
+}
+.txt input{
+    background: none;
+    text-align: center;
+    outline: none;
+    background-color: black;
+    opacity: .4;
+    color: white;
+    font-size: 15px;
+    border-radius:8px;
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+}
+.txt span{
+    font-size: 28px;
+}
+.txt2{
+    margin-left: 50%;
+    margin-top: -130px;
+}
+.txt2 input{
+    background:none;
+    text-align: center;
+    outline: none;
+    border-radius:8px;
+    width:200px;
+    height:35px;
+    border-radius:10px;
+    color: white;
+    background-color:black;
+    opacity: .4;
+    font-size:15px;
+}
+.txt2 span{
+    font-size: 28px;
+}
+.txt3 span{
+    font-size: 28px;
+    margin-left: 130px;
+    text-align: center;
+}
+.txt3 input[type="text"]{
+    background:none;
+    text-align: center;
+    outline: none;
+    border-radius: 8px;
+    width: 200px;
+    height: 35px;
+    background-color: 35px;
+    background-color: black;
+    opacity: .4;
+    color: white;
+    border-radius: 10px;
+    font-size: 15px;
+}
+.txt3 input[type="button"]{
+    background: none;
+    text-align: center;
+    outline: none;
+    width: 90px;
+    height: 30px;
+    font-size: 20px;
+    margin-left: 300px;
+    border-radius: 10px;
+    background-color: blue;
+    cursor: pointer;
+    opacity: .5;
+    color: white;
+} 
+.txt3 input[type="button"]:hover{
+    background-color: red;
+    color: white;
+}

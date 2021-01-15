@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login start page</title>
+    <style>
+        #container{
+            height: 360px;
+            width: 450px;
+            border-radius: 35px;
+            border: 2px solid black;
+            margin: 10% auto;
+            background-color: rgb(194, 193, 193);
+        }
+        #container::before{
+         content: "";
+         background:url(/ipec1.jpeg) no-repeat center center/cover;
+         position: absolute;
+         top:0px;
+         left:0px;
+         height: 100%;
+         width: 100%;
+         z-index: -1;
+         opacity: 0.79;
+        }
+        #container .logo img{
+            height: 100px;
+            margin: 30px;
+            margin-left: 180px;
+        }
+         #container .box{
+             margin: 5px;
+             text-align: center;
+         }
+         #container .box input{
+             border-radius: 10px;
+             height: 30px;
+             text-align: center;
+         }
+         #container .box1 input{
+             font-size: large;
+         }
+         #container .box1 input:hover{
+             background-color: rgb(85, 85, 189);
+             cursor: pointer;
+         }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="logo">
+            <img src="ipec.png" alt="ipec">
+        </div>
+        <form onsubmit="return validate()" action="home1.html">
+            <div class="box">
+                <!-- <label for="User ID">User ID</label><br><br> -->
+                <input type="text" id="User ID" placeholder="Enter your User ID"><br><br>
+                <!-- <label for="pass">Password</label><br><br> -->
+                <input type="password" id="pass" placeholder="Enter your Password"><br><br>
+                <div class="box1">
+                    <input id="submit" type="submit" value="Submit Now">  
+                </div>
+
+            </div>
+
+        </form>
+    </div>
+    <script>
+        function validate(){
+            var user = document.getElementById("User ID");
+            var pas = document.getElementById("pass");
+
+            if(user.value.trim()==""){
+                alert("No blank allowed");
+                return false;
+            }else if(pas.value.trim()==""){
+                alert("No blank allowed");
+                return false;
+            }else if(user.value.trim().length >10){
+                alert("Id must be of 10 digits.");
+                return false;
+            }else if(user.value.trim().length < 10){
+                alert("Id must be of 10 digits.");
+                return false;
+            }else{
+                return true;
+            }
+        }
+    </script>
+    
+</body>
+</html>

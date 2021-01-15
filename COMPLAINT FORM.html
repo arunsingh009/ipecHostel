@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COMPLAINT FORM</title>
+  <!-- <link rel="stylesheet" href="COMPLAINT.css"> -->
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+    #container{
+        height: 480px;
+        width: 450px;
+        border-radius: 35px;
+        border: 2px solid black;
+        margin: 5% auto;
+        background-color:#fef;
+   } 
+   #container::before{
+       content: "";
+       /* background:url(/pic1.png) no-repeat center center/cover; */
+       background-color:#fec107;
+       position: absolute;
+       top:0px;
+       left:0px;
+       height: 100%;
+       width: 100%;
+       z-index: -1;
+  }
+  #container .box{
+     margin: 5px;
+     text-align: center;
+   }
+   #container .box input{
+      border-radius: 10px; 
+     text-align: center;
+     margin: 6px; 
+  }  
+   #container .box .box1 input{
+       font-size: large;
+       height: 30px;
+       padding: 5px;
+       margin: 15px;
+  }
+  #container .box input{
+       border-radius: 10px;
+       height: 30px;
+       text-align: center;
+  }
+  #container .box1 input{
+       font-size: large;
+  }
+  #container .box1 input:hover{
+       background-color: rgb(85, 85, 189);
+       cursor: pointer;
+  }
+  #container .title h3{
+    text-align: center;
+    margin: 15px;
+    color: #fec107 ;
+  }
+        
+  </style>
+</head>
+
+<body>
+
+  <div id="container">
+    <div class="title">
+      <h3>COMPLAINT FORM</h3>
+    </div>
+    <div class="box">
+      <form onsubmit="return validate()" action="submitted.html">
+        <label for="FirstName">First Name</label>&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" class="input" id="FirstName" /><br> 
+        <label for=Lastname>Last Name</label>&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" class="input" id="Lastname" /><br>
+        <!-- <label for="Year">YEAR</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="number" class="input" id="Year" /><br> -->
+        <label for="Room no">Room Number</label>
+        <input type="text" class="input" id="Room no" placeholder="room number" required /><br>
+        <label for="Complaintagainst">Complaint against : </label>&nbsp;
+        <div class="custom_select" id="Complaintagainst" >
+        <select>
+          <option value="">Select</option>
+          <option value="Mess">Mess</option>
+          <option value="Warden">Warden</option>
+          <option value="Houseing Help">Housing help</option>
+          <option value="Any other">Any other</option>
+        </select>
+    </div><br>
+        <label for="year">Year : </label>&nbsp;
+        <div class="custom_select" id="year" >
+        <select>
+          <option value="">Select</option>
+          <option value="1">Ist year</option>
+          <option value="2">IInd year</option>
+          <option value="3">IIIrd year</option>
+          <option value="4">IVth year</option>
+        </select>
+    </div><br>
+    <label for="cf">Name of the concerned faculty</label><br>
+    <input type="text" class="input" id="cf" /><br>
+    <label for="reason">Please elaborate your concern</label><br>
+    <textarea class="textarea" id="reason" style="margin: 0px; width: 312px; height: 40px;"/ placeholder="Give valid reason"></textarea>
+    <div class="box1">
+      <input type="submit" value="submit" />
+    </div>
+    </form>
+  </div>
+  <script>
+    function validate(){
+      var FN = document.getElementById("FirstName");
+      var LN = document.getElementById("LastName");
+      var Year = document.getElementById("Year");
+      var CF = document.getElementById("cf");
+      var Reason = document.getElementById("reason");
+
+      if(FN.value.trim()==""){
+        alert("No blank values");
+        return false;
+      }else if(LN.value.trim()==""){
+        alert("No blank values");
+        return false;
+      }else if(Year.value.trim()==""){
+        alert("Mention your Year");
+        return false;
+      }else if(reason.value.trim()==""){
+        alert("No blank values");
+        return false;
+      }else if(reason.value.trim()<20){
+         alert("Elobrate your reason");
+         return false;
+      }else{
+        return true;
+      }
+    }
+  </script>
+
+
+</body>
+
+</html>

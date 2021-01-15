@@ -1,0 +1,109 @@
+/* css reset  */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+:root{
+    --navbar-height:59px;
+}
+/* navbar */
+#navbar{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0px; 
+}
+/* logo  */
+#logo{
+    margin: 10px 29px;
+}
+#logo img{
+    height: 50px;
+    width: 50px;
+}
+/* navbar ul  */
+#navbar ul {
+    display: flex;
+}
+#navbar ul li {
+    list-style: none;
+   font-size: 1.3rem;
+}
+#navbar ul li a{
+    color: black;
+    display: block;
+    padding: 3px 22px;
+    text-decoration: none;
+    border-radius: 20px;
+} 
+#navbar ul li a:hover{
+    background-color: black;
+    color:white;
+}
+#navbar::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    background-color:grey;
+    z-index: -1;
+    opacity: 0.49;
+    font-family: 'Baloo Bhai 2', cursive;
+}
+/* home section  */
+#home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    padding: 3px 43px;
+}
+#home::before{
+    content: "";
+    top: 0px;
+    left:auto;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: url(ipec1.jpeg) no-repeat center center/cover;
+    z-index: -1;
+    opacity: 0.79;
+}
+#home h1{
+    text-align: center;
+    font-size: 1.9rem;
+    margin: 40px;
+    font-family: 'Bree Serif', serif;
+
+}
+#home p{
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+    
+}
+/* utility class  */
+.h-primary{
+    font-size: 3.8rem;
+    padding: 22px;
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+}
+.h-secondary{
+    font-size: 2.4rem;
+    padding: 15px;
+    text-align: center;
+    font-family: 'Bree Serif', serif;
+}
+.btn{
+    padding: 6px 20px;
+    border: 2px solid white;
+    background-color: brown;
+    color: white;
+    margin: 14px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+}

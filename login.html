@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" media="screen and (max-width:1170px)" href="l2.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="box">
+        <form onsubmit=" return validate()" action="dashboard2.html">
+        <div class="login">
+           
+                <div class="head">
+                    <p>login</p>
+                </div>
+
+                <p>Id number<br></p>
+                <input type="text" id="text" name="">
+                <p>Password:<br></p>
+                <input type="Password" id="pass" name="">
+            
+        </div>
+        <div class="submit">
+            <input id="submit" type="submit" value="login">
+        </div>
+        </form>
+    </div>
+</body>
+<script>
+    function validate(){
+        var text= document.getElementById("text");
+        var pass= document.getElementById("pass");
+
+        if(text.value.trim() == "" ) {
+            alert("No blank values allowed");
+            return false;
+        }else if(pass.value.trim() == "") {
+            alert("No blank values allowed");
+            return false;
+        }else if(pass.value.trim().length <5) {
+            alert("Password too sort.");
+            return false;
+        }else if(text.value.trim().length < 7){
+            alert("User Id must be of 7 digits")
+            return false;
+        }else if(text.value.trim().length > 7){
+            alert("User Id must be of 7 digits")
+            return false;
+        }else{
+            return true;
+        }
+    }
+    
+</script>
+
+</html>

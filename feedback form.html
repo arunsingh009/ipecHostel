@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feedback form </title>
+    <style>
+        *{
+             margin: 0px;
+            padding: 0px; 
+            
+        }
+        #container{
+            height: 400px;
+            width: 450px;
+            border-radius: 35px;
+            border: 2px solid black;
+            margin: 5% auto;
+            background-color: rgb(194, 193, 193);
+        } 
+        #container::before{
+         content: "";
+         /* background:url(/pic1.png) no-repeat center center/cover; */
+         background-color: rgb(8, 3, 3);
+         position: absolute;
+         top:0px;
+         left:0px;
+         height: 100%;
+         width: 100%;
+         z-index: -1;
+         opacity: 0.79;
+        }
+        #container .box{
+             margin: 5px;
+              text-align: center;
+              opacity: 0.8;
+         }
+          #container .box input{
+             border-radius: 10px; 
+              text-align: center; 
+         }  
+         #container .box .box1 input{
+             font-size: large;
+             height: 30px;
+             padding: 5px;
+             margin: 15px;
+         }
+         #container .box1 input:hover{
+             background-color: rgb(85, 85, 189);
+             cursor: pointer;
+         }
+         #container .box label{
+             margin: 80px;
+             padding: 3px;
+         }
+         #container .box input {
+             margin-right: 116px;
+             font-size: 1.2rem;
+         }
+         h3{
+             margin: 10px;
+             /* border: 2px solid black; */
+             /* border-radius: 5px; */
+             padding: 3px;
+             background-color:rgb(143, 142, 142) ;
+             text-shadow: 2px 2px rgba(148, 211, 3, 0.61);
+             color: rgba(255, 0, 0, 0.829);
+         }
+         h1{
+             font-size: 5rem;
+             text-shadow: 2px 2px rgba(3, 211, 107, 0.884);
+             color: rgba(255, 0, 0, 0.486);
+         }
+
+          
+
+       
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+      <!-- <h1><marquee behavior="" direction="left"> Feedback form</marquee> </h1> -->
+      <h1 align="center"><b> Feedback form </b></h1>
+</div>
+    <div id="container">
+        <div class="box">
+            <h3>Give us your feedback</h3>
+            <form onsubmit ="return validate()" action="submitted.html">
+
+                <label for="option1"> Service is good.</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" id="option1 " name="service" value="good"  required><br><br>
+                <label for="option2"> Service is Very Good</label>&nbsp;
+                <input type="radio" id="option2 " name="service" value="Very good" ><br><br>
+                <label for="option1"> Excellent Service</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" id="option3 " name="service" value="Excellent" ><br><br>
+                <label for="option1">  Service is Just Ok </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" id="option4 " name="service" value="Just ok" ><br><br>
+                <label for="option1"> Service is Bad </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="radio" id="option5 " name="service" value="Bad" ><br><br>
+                 <textarea rows="10" cols="10" id="feed" placeholder="Give your suggestions" style="margin: 0px;
+                 width: 244px; height: 83px;" ></textarea> 
+                <div class="box1">
+                    <input type="submit" value="Submit Now">
+                    <input type="reset" value="Reset Now">
+                </div>
+            </form>
+
+        </div>
+        
+    </div>
+    <script>
+        function validate(){
+            var feed = document.getElementById("feed");
+
+            if(feed.value.trim()== ""){
+                alert("Give us suggestions");
+                return false;
+            }else if(feed.value.trim().length >=30){
+                alert("Give feedback in less than 30 words");
+                return false;
+            }else{
+                true;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
