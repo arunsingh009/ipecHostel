@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Ipechostel.com</title>
     <link rel="stylesheet" href="indexstyle.css">
+    <script src="https://kit.fontawesome.com/74fc7ffc23.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="custom.js"></script>
     <style>
         #home p{
             font-size: large;
@@ -25,14 +28,65 @@
             /* text-shadow: 2px 3px rgba(0, 0, 0, 0.274); */
 
         }
+        /* chatbot ki css */
+        .chat_icon{
+            position: fixed;
+            right: 30px;
+            bottom: 0;
+            font-size: 80px;
+            color: black;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        .chatbox{
+            position: fixed;
+            right: 20px;
+            bottom: 100px;
+            width: 400px;
+            height: 75vh;
+            background:#dedede;
+            z-index: 1000;
+            transition: all 0.3s ease-out;
+            transform: scaley(0);
+        }
+        .chatbox.active{
+            transform: scaleY(1);
+        }
+
+        .chatbox input {
+            height: 30px;
+            /* text-align: center; */
+            border-radius: 10px;
+            /* box-sizing: border-box; */
+            padding: 3px;
+            text-align: left;
+        }
+        .box #chatLog{
+            margin: 15px;
+        }
+
+
 
     </style>
 </head>
 
 <body>
+<!-- chatbot -->
+<div class="chat_icon">
+    <i class="fas fa-comments"></i>
+</div>
     <nav id="navbar">
         <div id="logo">
             <img src="ipec.png" alt="MyOnlineMeals.com">
+
+        </div>
+        <div class="chatbox">
+            <div class="box">
+              <p id="chatLog" > - - Hostel Assistant - - <br> </p>
+            </div>
+
+            <input id="userBox" type="text" class="chat" placeholder="Start with hello"
+            onkeydown="if(event.keyCode == 13) {talk()}">
 
         </div>
         <ul>
@@ -123,6 +177,92 @@
                 <img src="map.jpeg" alt="our client">
             </div>
         </div> 
+        <script>
+            know = {
+
+"Hello": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  Hi there!",
+"hello": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  Hi there!",
+"HELLO": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp  Hi there!",
+"Who are you?": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp I am Hostel's Assistant",
+"who are you?": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp I am Hostel's Assistant",
+"WHO ARE YOU?": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp I am Hostel's Assistant",
+"How are you?": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp I am Fine",
+"How old are you?": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp I am infinity in age",
+"Mess timings?": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp ",
+"mess timings?": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp ",
+"Mess Timings?": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp ",
+"Mess Timings": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"mess timings": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"mess timing": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"Facilities?": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"facilities?": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"facilities": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"Hostel Facilities?": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"hostel facilities?": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"hostelfacilities": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"Messinformation": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"messinformation": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"mess information": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"mess": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp I am fine ",
+"Mess": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"Mess information?": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"Medical": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"medical": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"Emergency": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"emergency": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"medical emergency": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"Medical emergency": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"Medical Emergency": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"Rooms": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"rooms": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"room": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"Room": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"Rules": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"rules": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"Rules and regulation": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"Rules & regulation": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"rules and regulations": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"rules & regulations": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp ",
+"In Out timings": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"in out timings": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"In out timings": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"In & out timings": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"In & out timing": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"In & out time": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"in & out time": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"In Out timing": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"In Out": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"in Out": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"Infrastructure": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"infrastructure": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"Food delivery": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"food delivery": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"delivery": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"Delivery": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"Ragging": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"ragging": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"Ragging ": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+"ragging ": "&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp",
+
+
+
+
+
+
+};
+
+function talk() {
+var user = document.getElementById("userBox").value;
+document.getElementById("userBox").value = "";
+document.getElementById("chatLog").innerHTML += user + "<br>";
+
+if (user in know) {
+    document.getElementById("chatLog").innerHTML += know[user] + " &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <br>";
+} else {
+    document.getElementById("chatLog").innerHTML += " &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Use keywords eg: mess,<br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp facilities,emergency etc.... <br>";
+}
+}
+        </script>
     
 </body>
 
